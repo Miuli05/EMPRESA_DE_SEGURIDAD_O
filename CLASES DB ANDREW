@@ -1,0 +1,19 @@
+create database bd_seguridad;
+use bd_seguridad;
+
+create table incidencias (
+id int auto_increment primary key,
+tipo varchar(50),
+descripcion text,
+fecha_hora datetime,
+estado varchar(20),
+id_turno int
+);
+
+create table seguimientos (
+id int auto_increment primary key,
+comentario text,
+fecha_hora datetime,
+id_incidencia int,
+foreign key (id_incidencias) references incidencias(id)
+);
