@@ -27,4 +27,29 @@ class Vigilante extends ModeloBase
         return $consulta->rowCount() > 0;
     }
 
+    public function registrar(int $usuarioId, string $codigo): int
+    {
+        
+        $codigo = trim($codigo);
+        if ($usuarioId <= 0 || $codigo === '') {
+            throw new InvalidArgumentException('Complete los datos del vigilante.');
+        }
+
+        
+        $consulta = $this->db->prepare(
+            'SELECT id FROM vigilantes WHERE usuario_id = :usuario OR codigo = :codigo'
+        );
+        $consulta->execute(['usuario' => $usuarioId, 'codigo' => $codigo]);
+        if ($consulta->fetch()) {
+            throw new DomainException('El usuario o el código ya están registrados.');
+        }
+
+        
+        $consulta = $this->db->prepare(
+            'INSERT INTO vigilantes (usuario_id, codigo) VALUES (:usuario, :codigo)'
+        );
+        $consulta->execute(['usuario' => $usuarioId, 'codigo' => $codigo]);
+
+        return (int) $this->db->lastInsertId();
+    }
 }
