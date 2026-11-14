@@ -7,10 +7,10 @@ $listaTurnos = $turnoModel->listar();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Prueba de Turnos - Hito 2</title>
+    <title>Prueba de Turnos</title>
 </head>
 <body>
-    <h2>Registro de Turnos (MVC con Validaciones)</h2>
+    <h2>Registro de Turnos</h2>
 
   
     <?php if(isset($_GET['mensaje']) && $_GET['mensaje'] == 'registrado'): ?>
