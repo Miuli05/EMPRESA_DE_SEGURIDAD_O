@@ -9,7 +9,7 @@ class Puesto extends ModeloBase {
         $sql = "SELECT * FROM puestos ORDER BY id DESC";
         $datos = $this->db->query($sql);
         $resultado = $datos->fetchAll();
-        $return $resultado;
+        return $resultado;
     }
 
     // Correción: Se están cerrando las llaves
