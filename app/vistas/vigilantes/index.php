@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../controladores/vigilanteController.php';
+require_once __DIR__ . '/../../controladores/vigilanteController.php';
 
 $controlador = new VigilanteController();
 $vigilantes = [];
