@@ -21,12 +21,9 @@ class Notificacion extends ModeloBase {
 
         $dato = $buscar->fetch();
 
-        if ($dato) {
-            return $dato;
-        } else {
-            return null;
+            return $dato ?: null;
         }
-    }
+    
 
     public function listarPendientes(int $destinatarioId): array {
 
@@ -50,12 +47,7 @@ class Notificacion extends ModeloBase {
         $actualizar = $this->db->prepare($sql);
         $actualizar->execute(["id" => $id]);
 
-        $filas = $actualizar->rowCount();
-
-        if ($filas > 0) {
-            return true;
-        } else {
-            return false;
+        return $actualizar->rowCount() > 0;
         }
-    }
+    
 }
