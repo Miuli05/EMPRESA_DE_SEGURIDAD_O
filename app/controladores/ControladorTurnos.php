@@ -1,6 +1,6 @@
 <?php
 
-require_once "../modelos/turnos.php"; 
+require_once __DIR__ . '/../modelos/Turno.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    

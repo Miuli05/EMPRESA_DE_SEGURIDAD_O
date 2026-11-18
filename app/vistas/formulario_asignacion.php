@@ -1,11 +1,11 @@
 <?php
-require_once "../modelos/Turnos.php";
+require_once "../modelos/Turno.php";
 require_once "../modelos/Asignacion.php";
 
 $turnoModel = new Turno();
 $asignacionModel = new Asignacion();
 
-$turnosDisponibles = $turnoModel->listar;
+$turnosDisponibles = $turnoModel->listar();
 ?>
 <!DOCTYPE html>
 <html>

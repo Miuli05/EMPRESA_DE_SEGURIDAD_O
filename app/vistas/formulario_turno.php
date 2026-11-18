@@ -1,5 +1,5 @@
 <?php
-require_once "../modelos/turnos.php";
+require_once "../modelos/Turno.php";
 $turnoModel = new Turno();
 
 $listaTurnos = $turnoModel->listar(); 
