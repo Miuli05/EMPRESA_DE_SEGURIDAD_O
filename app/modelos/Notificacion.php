@@ -2,6 +2,7 @@
 <?php
 require_once __DIR__ . '/ModeloBase.php';
 
+
 class Notificacion extends ModeloBase {
 
     public function listar(): array {
@@ -12,6 +13,7 @@ class Notificacion extends ModeloBase {
 
         return $resultado;
     }
+
 
     public function buscarPorId(int $id): ?array {
 
@@ -24,6 +26,7 @@ class Notificacion extends ModeloBase {
             return $dato ?: null;
         }
     
+
 
     public function listarPendientes(int $destinatarioId): array {
 
@@ -38,6 +41,7 @@ class Notificacion extends ModeloBase {
 
         return $pendientes;
     }
+
 
     public function marcarLeida(int $id): bool {
 
