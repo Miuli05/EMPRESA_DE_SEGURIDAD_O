@@ -2,7 +2,13 @@
 require_once __DIR__ . '/ModeloBase.php';
 
 class Incidencia extends ModeloBase
+
 {
+    public function listar(): array
+    {
+        return $this->listarDetallado();
+    }
+    
     public function registrar(int $turnoId, int $vigilanteId, string $tipo, string $descripcion): int
     {
         $sql = "INSERT INTO incidencias (turno_id, vigilante_id, tipo, descripcion)
