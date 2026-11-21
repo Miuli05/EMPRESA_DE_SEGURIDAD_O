@@ -14,10 +14,10 @@ $modulos = [
         'modelo' => 'Usuario',
         'campos' => [
             'nombre' => 'Nombre completo',
-            'correo' => 'Correo',
-            'rol' => 'Rol'
+            'rol' => 'Rol',
+            'activo' => 'Estado'
         ],
-        'columnas' => ['id', 'nombre', 'correo', 'rol', 'activo']
+        'columnas' => ['nombre', 'rol', 'activo']
     ],
     'vigilantes' => [
         'titulo' => 'Vigilantes',
